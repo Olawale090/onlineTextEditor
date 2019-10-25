@@ -47,7 +47,7 @@ class menuTab {
 
     menuSelect(target) {
         target.style.paddingTop = 3 + "px";
-        target.style.height = 78 + '%';
+        target.style.height = 80 + '%';
         target.style.zIndex = 8;
         target.style.paddingBottom = 2 + "px";
         target.style.border = `solid ${1}px gray`;

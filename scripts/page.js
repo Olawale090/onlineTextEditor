@@ -1,41 +1,46 @@
+// main page
+let page = document.querySelector('.paper');
+
+//button list
+let bold = document.getElementById('boldBtn');
+let italic = document.getElementById("italicBtn");
+let underline = document.getElementById("underlineBtn");
+let strikethrough = document.getElementById("strikeBtn");
+let subscript = document.getElementById("subscriptBtn");
+let superscript = document.getElementById("superscriptBtn");
+let alignRight = document.getElementById("alignRight");
+let alignCenter = document.getElementById("alignCenter");
+let alignLeft = document.getElementById("alignLeft");
+let justify = document.getElementById("justify");
+let fontName = document.querySelector(".fontName");
+let fontColorBtn = document.querySelector(".colortemplate");
+let fontSize = document.querySelector(".fontsize");
+
+
+
 class homePanel {
     constructor() {
-        // main page
-        this.page = document.getElementById('page');
-
-        //button list
-        this.bold = document.getElementById('boldBtn');
-        this.italic = document.getElementById("italicBtn");
-        this.underline = document.getElementById("underlineBtn");
-        this.strikethrough = document.getElementById("strikeBtn");
-        this.subscript = document.getElementById("subscriptBtn");
-        this.superscript = document.getElementById("superscriptBtn");
-        this.bold = document.getElementById('boldBtn');
-        this.italic = document.getElementById("italicBtn");
-        this.underline = document.getElementById("underlineBtn");
-        this.strikethrough = document.getElementById("strikeBtn");
-        this.subscript = document.getElementById("subscriptBtn");
-        this.superscript = document.getElementById("superscriptBtn");
-        this.alignRight = document.getElementById("alignRight");
-        this.alignCenter = document.getElementById("alignCenter");
-        this.alignLeft = document.getElementById("alignLeft");
-        this.justify = document.getElementById("justify");
+        this.error = "error message is for your advantage";
     }
 
     // Page design mode
     design() {
-        this.page.contentDocument.designMode = 'On';
-        this.page.contentEditable = true;
+        iframe.document.designMode = 'On';
+        console.log(iframe.value);
     }
 
     edit(command) {
-        this.page.contentDocument.execCommand(command, false, null);
+        page.contentDocument.execCommand(command, false, null);
+    }
+
+    editArgs(command, data) {
+        page.contentDocument.execCommand(command, false, data);
     }
 
     setPage() {
-        this.page.addEventListener('load', () => {
-            homePanelEdit.design();
-        }, false);
+
+        homePanelEdit.design();
+
     }
 
 }
@@ -43,70 +48,87 @@ class homePanel {
 var homePanelEdit = new homePanel();
 homePanelEdit.setPage();
 
-
 class homePanelButtons extends homePanel {
     constructor() {
         super();
     }
 
     boldText() {
-        this.bold.addEventListener('click', () => {
+        bold.addEventListener('click', () => {
             homePanelEdit.edit('bold');
         }, false);
     }
 
     italize() {
-        this.italic.addEventListener('click', () => {
+        italic.addEventListener('click', () => {
             homePanelEdit.edit('italic');
         }, false);
     }
 
     underlineText() {
-        this.underline.addEventListener('click', () => {
+        underline.addEventListener('click', () => {
             homePanelEdit.edit('underline');
         }, false);
     }
 
     strikeThrough() {
-        this.strikethrough.addEventListener('click', () => {
+        strikethrough.addEventListener('click', () => {
             homePanelEdit.edit('strikeThrough');
         }, false);
     }
 
     subscriptText() {
-        this.subscript.addEventListener('click', () => {
+        subscript.addEventListener('click', () => {
             homePanelEdit.edit('subscript');
         }, false);
     }
 
     superscriptText() {
-        this.superscript.addEventListener('click', () => {
+        superscript.addEventListener('click', () => {
             homePanelEdit.edit('superscript');
         }, false);
     }
 
     alignLeftText() {
-        this.alignLeft.addEventListener('click', () => {
+        alignLeft.addEventListener('click', () => {
             homePanelEdit.edit('justifyLeft');
         }, false);
     }
 
     alignCenterText() {
-        this.alignCenter.addEventListener('click', () => {
+        alignCenter.addEventListener('click', () => {
             homePanelEdit.edit('justifyCenter');
         }, false);
     }
 
     alignRightText() {
-        this.alignRight.addEventListener('click', () => {
-            homePanelEdit.edit('justfyRight');
+        alignRight.addEventListener('click', () => {
+            homePanelEdit.edit('justifyRight');
         }, false);
     }
 
     justifyText() {
-        this.justify.addEventListener('click', () => {
+        justify.addEventListener('click', () => {
             homePanelEdit.edit('justifyFull');
             alert("justified");
+        }, false);
+    }
+
+    textFontName() {
+        fontName.addEventListener('change', () => {
+            homePanelEdit.editArgs('fontName', fontName.value);
+        }, false);
+    }
+
+    fontColor() {
+        fontColorBtn.addEventListener('change', () => {
+            homePanelEdit.editArgs('foreColor', fontColorBtn.value);
+        }, false);
+    }
+
+    textFontSize() {
+        fontSize.addEventListener('change', () => {
+            homePanelEdit.editArgs('fontSize', fontSize.value);
         }, false);
     }
 }
@@ -122,9 +144,21 @@ homeButtons.alignCenterText();
 homeButtons.alignRightText();
 homeButtons.alignLeftText();
 homeButtons.justifyText();
+homeButtons.textFontName();
+homeButtons.textFontSize();
+homeButtons.fontColor();
 
 
 
 import { add } from './mainJs.js';
 
-//alert(add(6, 7));                                                                                                                                             1wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwb  
+alert(add(6, 7));
+
+// (function() {
+//     // iframe.document.designMode = 'On';
+//     page.contentEditable = true;
+// })()
+
+// page.addEventListener('selectstart', () => {
+//     alert("text selected");
+// }, false);

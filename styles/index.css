@@ -5,8 +5,9 @@
     }
     
     header {
-        position: absolute;
+        position: fixed;
         background-color: rgb(252, 253, 252);
+        z-index: 2;
     }
     
     .header {
@@ -14,7 +15,7 @@
     }
     
     .list {
-        position: absolute;
+        position: fixed;
         top: 4%;
         height: 4%;
         width: 100%;
@@ -28,6 +29,7 @@
         font-size: 15px;
         box-sizing: border-box;
         text-align: center;
+        z-index: 4;
     }
     
     .list>span:hover {
@@ -49,8 +51,8 @@
     
     .tray {
         width: 100%;
-        height: 20%;
-        position: absolute;
+        height: 18%;
+        position: fixed;
         top: 8%;
         background-color: rgb(255, 255, 255);
         border-top: solid gray 1px;
@@ -730,23 +732,35 @@
     
     .iframecontainer {
         width: 100%;
-        height: 200%;
+        height: 77%;
         position: absolute;
-        top: 20%;
+        top: 23%;
         background-image: linear-gradient(to bottom, white, rgb(240, 240, 240));
+        overflow: auto;
+        padding-bottom: 5%;
+        box-sizing: border-box;
     }
     
-    .pages {
-        width: 70%;
-        height: 90%;
-        margin-left: 15%;
+    .paper {
+        width: 21.59cm;
+        height: 27.94cm;
+        margin-left: 20%;
         margin-top: 5%;
-        overflow: none;
+        overflow-x: hidden;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         border: solid gray 1px;
         background-color: white;
-        padding: 50px;
+        padding: 2.54cm;
         box-sizing: border-box;
+        word-wrap: normal;
+    }
+    
+    .colortemplate {
+        position: absolute;
+        top: 30%;
+        right: 5%;
+        border: none;
+        background-color: none;
     }
     
     footer {
