@@ -15,12 +15,18 @@ let justify = document.getElementById("justify");
 let fontName = document.querySelector(".fontName");
 let fontColorBtn = document.querySelector(".colortemplate");
 let fontSize = document.querySelector(".fontsize");
+let bulletBtn = document.querySelector(".unorderedList");
+let bulletNumBtn = document.querySelector(".orderedList");
+let paragraphBtn = document.querySelector(".paragraph");
+let forecolor = document.querySelector(".forecolor");
+
 
 
 
 class homePanel {
     constructor() {
         this.error = "error message is for your advantage";
+
     }
 
     // Page design mode
@@ -110,7 +116,6 @@ class homePanelButtons extends homePanel {
     justifyText() {
         justify.addEventListener('click', () => {
             homePanelEdit.edit('justifyFull');
-            alert("justified");
         }, false);
     }
 
@@ -128,8 +133,44 @@ class homePanelButtons extends homePanel {
 
     textFontSize() {
         fontSize.addEventListener('change', () => {
-            homePanelEdit.editArgs('fontSize', fontSize.value);
+            homePanelEdit.editArgs('fontSize', fontSize.value + "pt");
         }, false);
+    }
+
+    paragraph() {
+        paragraphBtn.addEventListener('click', () => {
+            homePanelEdit.edit('insertParagraph');
+        }, false);
+    }
+
+    backgroundColor() {
+        forecolor.addEventListener('change', () => {
+            homePanelEdit.editArgs('backColor', forecolor.value);
+        }, false);
+    }
+
+
+    bullet() {
+        try {
+            bulletBtn.addEventListener('click', () => {
+                homePanelEdit.edit('insertUnorderedList');
+            }, false);
+        } catch (error) {
+            alert(error);
+        }
+
+    }
+
+
+    numbering() {
+        try {
+            bulletNumBtn.addEventListener('click', () => {
+                homePanelEdit.edit('insertOrderedList');
+            }, false);
+        } catch (error) {
+            alert(error);
+        }
+
     }
 }
 
@@ -147,6 +188,10 @@ homeButtons.justifyText();
 homeButtons.textFontName();
 homeButtons.textFontSize();
 homeButtons.fontColor();
+homeButtons.bullet();
+homeButtons.numbering();
+homeButtons.paragraph();
+homeButtons.backgroundColor();
 
 
 

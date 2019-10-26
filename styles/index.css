@@ -746,13 +746,14 @@
         height: 27.94cm;
         margin-left: 20%;
         margin-top: 5%;
-        overflow-x: hidden;
+        overflow: auto !important;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         border: solid gray 1px;
         background-color: white;
         padding: 2.54cm;
         box-sizing: border-box;
-        word-wrap: normal;
+        word-wrap: break-word;
+        resize: horizontal;
     }
     
     .colortemplate {
@@ -761,6 +762,16 @@
         right: 5%;
         border: none;
         background-color: none;
+    }
+    
+    .forecolor {
+        position: absolute;
+        top: 50%;
+        right: 25%;
+        width: 10%;
+        height: 10%;
+        background: none;
+        border: none;
     }
     
     footer {
