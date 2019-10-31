@@ -19,6 +19,9 @@ let bulletBtn = document.querySelector(".unorderedList");
 let bulletNumBtn = document.querySelector(".orderedList");
 let paragraphBtn = document.querySelector(".paragraph");
 let forecolor = document.querySelector(".forecolor");
+let copyBtn = document.querySelector(".copy");
+let cutBtn = document.querySelector(".cut");
+let pasteBtn = document.querySelector(".paste");
 
 
 
@@ -172,6 +175,24 @@ class homePanelButtons extends homePanel {
         }
 
     }
+
+    copyText() {
+        copyBtn.addEventListener('click', () => {
+            homePanelEdit.edit('copy');
+        }, false);
+    }
+
+    cutText() {
+        cutBtn.addEventListener('click', () => {
+            homePanelEdit.edit('cut');
+        }, false);
+    }
+
+    pasteText() {
+        pasteBtn.addEventListener('click', () => {
+            homePanelEdit.edit('paste');
+        }, false);
+    }
 }
 
 var homeButtons = new homePanelButtons();
@@ -192,6 +213,9 @@ homeButtons.bullet();
 homeButtons.numbering();
 homeButtons.paragraph();
 homeButtons.backgroundColor();
+homeButtons.copyText();
+homeButtons.cutText();
+homeButtons.pasteText();
 
 
 
