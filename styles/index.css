@@ -796,7 +796,7 @@
         color: white;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         font-size: 15px;
-        z-index: 2;
+        z-index: 20;
         position: absolute;
         top: 8%;
         list-style: none;
@@ -821,6 +821,6 @@
         top: 8%;
         background-color: rgb(240, 240, 240);
         position: absolute;
-        z-index: 2;
+        z-index: 20;
         left: 15%;
     }
