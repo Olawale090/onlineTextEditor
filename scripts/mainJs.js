@@ -34,12 +34,16 @@ class menuTab {
 
     openInsert() {
         this.insertTray.style.display = "block";
+        this.insertTray.style.height = 18 + '%';
+        this.insertTray.style.zIndex = 1;
         this.homeTray.style.display = "none";
         this.designTray.style.display = "none";
     }
 
     openDesignTab() {
         this.designTray.style.display = "block";
+        this.designTray.style.height = 18 + '%';
+        this.designTray.style.zIndex = 1;
         this.homeTray.style.display = "none"
         this.insertTray.style.display = "none";
     }
@@ -48,11 +52,11 @@ class menuTab {
     menuSelect(target) {
         target.style.paddingTop = 3 + "px";
         target.style.height = 80 + '%';
-        target.style.zIndex = 8;
-        target.style.paddingBottom = 2 + "px";
+        target.style.paddingBottom = 3 + "px";
         target.style.border = `solid ${1}px gray`;
         target.style.borderBottom = "none";
         target.style.backgroundColor = "white";
+
     }
 
     menuHide(target) {
@@ -71,27 +75,49 @@ var testing = new menuTab();
 
 window.addEventListener('load', () => {
     testing.menuSelect(home);
+    iframe.focus();
+    localStorage.setItem('content', document.querySelector('.paper').value);
+    document.querySelector('.paper').value = localStorage.content;
 }, false);
 
-home.addEventListener('click', () => {
-    testing.openHome();
-    testing.menuSelect(home);
-    testing.menuHide(insert);
-}, false);
 
-insert.addEventListener('click', () => {
-    testing.openInsert();
-    testing.menuSelect(insert);
-    testing.menuHide(home);
-    testing.menuHide(design);
-}, false);
+class eventMonitor extends menuTab {
+    constructor() {
+        super();
+    }
 
-design.addEventListener('click', () => {
-    testing.openDesignTab();
-    testing.menuSelect(design);
-    testing.menuHide(home);
-    testing.menuHide(insert);
-}, false);
+    homeTabCommand() {
+        testing.openHome();
+        testing.menuSelect(home);
+        testing.menuHide(insert);
+        testing.menuHide(design);
+        iframe.focus();
+    }
+
+    insertTabCommand() {
+        testing.openInsert();
+        testing.menuSelect(insert);
+        testing.menuHide(home);
+        testing.menuHide(design);
+        iframe.focus();
+    }
+
+    designTabCommand() {
+        testing.openDesignTab();
+        testing.menuSelect(design);
+        testing.menuHide(home);
+        testing.menuHide(insert);
+        iframe.focus();
+    }
+}
+
+let eventInstance = new eventMonitor();
+
+home.addEventListener('click', eventInstance.homeTabCommand, false);
+
+insert.addEventListener('click', eventInstance.insertTabCommand, false);
+
+design.addEventListener('click', eventInstance.designTabCommand, false);
 
 
 export function add(a, b) {
