@@ -8,6 +8,7 @@
     <link rel="icon" href="assets/icons/084-word-1.png">
     <script type="module" async src="scripts/mainJs.js"></script>
     <script type="module" async src="scripts/page.js"></script>
+    <script type="module" async src="scripts/file.js"></script>
     <link rel="stylesheet" href="styles/index.css">
 
 
@@ -36,17 +37,93 @@
     </div>
 
     <div class="file_tab">
+
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;
+                width:22%; 
+                left:30%;
+                height:7%; 
+                border: 2px solid white; 
+                border-radius:50px;
+                padding:6px;
+                box-sizing:border-box;
+                position:absolute;
+                top:10px;
+                " xml:space="preserve" id="file_back_to_page">
+            <g>
+                <g>
+                    <path fill="white"
+                        d="M492,236H68.442l70.164-69.824c7.829-7.792,7.859-20.455,0.067-28.284c-7.792-7.83-20.456-7.859-28.285-0.068    l-104.504,104c-0.007,0.006-0.012,0.013-0.018,0.019c-7.809,7.792-7.834,20.496-0.002,28.314c0.007,0.006,0.012,0.013,0.018,0.019    l104.504,104c7.828,7.79,20.492,7.763,28.285-0.068c7.792-7.829,7.762-20.492-0.067-28.284L68.442,276H492    c11.046,0,20-8.954,20-20C512,244.954,503.046,236,492,236z" />
+                </g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+        </svg>
+
+        <li>New</li>
         <li>Open</li>
         <li>Save</li>
+        <li>Save As</li>
         <li>Print</li>
+        <li>Export</li>
         <li>Help</li>
         <li>Details</li>
+
     </div>
 
-    <div class="document_formats"></div>
+    <div class="document_formats">
+        <div class="new_window">
+            <p class="file_new_title">
+                New
+            </p>
+
+            <input type="text" placeholder="Search for online templates" class="file_new_tab_search">
+            <div class="file_new_templates_tab">
+                <li class="blank_document ">testing</li>
+                <li class="blog_post">testing</li>
+                <li class="adjacency_letter">testing</li>
+                <li class="adjacency_report">testing</li>
+                <li class="adjacency_resume">testing</li>
+                <li class="apothecary_letter">testing</li>
+                <li class="apothecary_newsletter">testing</li>
+                <li class="apothecary_resume">testing</li>
+                <li class="chronological_letter">testing</li>
+                <li class="chronological_resume">testing</li>
+            </div>
+        </div>
+    </div>
 
     <div class="function tray for main menu home" id="homeTray">
-        <span class="basic editing copy and pasting">
+        <span class="basic  copy and pasting">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" 
                         style="fill:rgb(140, 240, 173); 
                                 width:50px; 
@@ -74,7 +151,7 @@
                                 height:15%;
                                 right:60%; 
                                 top:20%;
-                                position:absolute;" class="copy">
+                                position:absolute;" class="copy" id="copy">
                         <path d="M4 4v20h7v-2H6V6h12v1h2V4H4zm8 4v20h16V8H12zm2 2h12v16H14V10z"/>   
                     </svg>
 
@@ -100,7 +177,6 @@
         <span class="basic text editing colouring"> 
             
                 <select name="fonts" id="font name" class="fontName select">
-                    <option value="Calibri">calibri</option>
                     <option value="Arial">Arial </option>
                     <option value="Arial Black">Arial Black</option>
                     <option value="Arial Narrow">Arial Narrow</option>
@@ -122,7 +198,6 @@
                 </select>
 
                 <select name="font size" id="font name" class="fontsize" >
-                    <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -133,7 +208,7 @@
                     <option value="9">9</option>
                     <option value="10">10</option>
                     <option value="11">11</option>
-                    <option value="12pt">12</option>
+                    <option value="12">12</option>
                     <option value="13">13</option>
                     <option value="14">14</option>
                     <option value="15">15</option>

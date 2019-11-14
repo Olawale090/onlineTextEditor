@@ -62,6 +62,16 @@ class homePanelButtons extends homePanel {
         super();
     }
 
+    appload() {
+        window.addEventListener('load', () => {
+            homePanelEdit.editArgs('fontName', 'Calibri');
+            homePanelEdit.editArgs('fontSize', 3);
+            this.fontName.value = 'Calibri';
+            this.fontSize.value = 3;
+            iframe.document.body.style.lineHeight = 2;
+        }, false);
+    }
+
     boldText() {
         this.bold.addEventListener('click', () => {
             homePanelEdit.edit('bold');
@@ -71,54 +81,63 @@ class homePanelButtons extends homePanel {
     italize() {
         this.italic.addEventListener('click', () => {
             homePanelEdit.edit('italic');
+            document.querySelector('#italicBtn').style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
     underlineText() {
         this.underline.addEventListener('click', () => {
             homePanelEdit.edit('underline');
+            document.querySelector('#underlineBtn').style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
     strikeThrough() {
         this.strikethrough.addEventListener('click', () => {
             homePanelEdit.edit('strikeThrough');
+            document.querySelector('#strikeBtn ').style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
     subscriptText() {
         this.subscript.addEventListener('click', () => {
             homePanelEdit.edit('subscript');
+            this.subscript.style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
     superscriptText() {
         this.superscript.addEventListener('click', () => {
             homePanelEdit.edit('superscript');
+            this.superscript.style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
     alignLeftText() {
         this.alignLeft.addEventListener('click', () => {
             homePanelEdit.edit('justifyLeft');
+            this.alignLeft.style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
     alignCenterText() {
         this.alignCenter.addEventListener('click', () => {
             homePanelEdit.edit('justifyCenter');
+            this.alignCenter.style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
     alignRightText() {
         this.alignRight.addEventListener('click', () => {
             homePanelEdit.edit('justifyRight');
+            this.alignRight.style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
     justifyText() {
         this.justify.addEventListener('click', () => {
             homePanelEdit.edit('justifyFull');
+            this.justify.style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
@@ -143,6 +162,7 @@ class homePanelButtons extends homePanel {
     paragraph() {
         this.paragraphBtn.addEventListener('click', () => {
             homePanelEdit.edit('insertParagraph');
+            this.paragraphBtn.style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
@@ -157,7 +177,8 @@ class homePanelButtons extends homePanel {
         try {
             this.bulletBtn.addEventListener('click', () => {
                 homePanelEdit.editArgs('insertUnorderedList');
-                iframe.style.lineHeight = 4;
+                iframe.document.body.style.lineHeight = 2;
+                this.bulletBtn.style.backgroundColor = 'rgb(231, 229, 229)';
             }, false);
         } catch (error) {
             alert(error);
@@ -170,6 +191,7 @@ class homePanelButtons extends homePanel {
         try {
             this.bulletNumBtn.addEventListener('click', () => {
                 homePanelEdit.edit('insertOrderedList');
+                this.bulletNumBtn.style.backgroundColor = 'rgb(231, 229, 229)';
             }, false);
         } catch (error) {
             alert(error);
@@ -180,6 +202,7 @@ class homePanelButtons extends homePanel {
     copyText() {
         this.copyBtn.addEventListener('click', () => {
             homePanelEdit.edit('copy');
+            document.querySelector('#copy').style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 
@@ -187,6 +210,7 @@ class homePanelButtons extends homePanel {
         try {
             this.cutBtn.addEventListener('click', () => {
                 homePanelEdit.edit('cut');
+                this.cutBtn.style.backgroundColor = 'rgb(231, 229, 229)';
             }, false);
         } catch (error) {
             alert(error);
@@ -197,6 +221,7 @@ class homePanelButtons extends homePanel {
         try {
             this.pasteBtn.addEventListener('click', () => {
                 homePanelEdit.edit('insertHTML');
+                this.pasteBtn.style.backgroundColor = 'rgb(231, 229, 229)';
             }, false);
         } catch (error) {
             alert(error);
@@ -207,12 +232,14 @@ class homePanelButtons extends homePanel {
     lineheightText() {
         this.lineheight.addEventListener('click', () => {
             homePanelEdit.edit('insertLineBreak');
+            this.lineheight.style.backgroundColor = 'rgb(231, 229, 229)';
         }, false);
     }
 }
 
 
 var homeButtons = new homePanelButtons();
+homeButtons.appload();
 homeButtons.boldText();
 homeButtons.italize();
 homeButtons.underlineText();
@@ -241,8 +268,10 @@ import { add } from './mainJs.js';
 alert(add(6, 7));
 
 
-class styles {
+class styles extends homePanelButtons {
     constructor() {
+        super();
+
         this.normalStyleBtn = document.querySelector('#normal');
         this.nospacingStyleBtn = document.querySelector('#nospacing');
         this.heading1StyleBtn = document.querySelector('#heading1');
@@ -260,6 +289,8 @@ class styles {
             homePanelEdit.editArgs('fontName', 'Calibri');
             homePanelEdit.editArgs('foreColor', 'black');
             homePanelEdit.editArgs('fontSize', 4);
+            this.fontSize.value = 4;
+            this.fontName.value = 'Calibri';
         }, false);
     }
 
@@ -268,6 +299,8 @@ class styles {
             homePanelEdit.editArgs('fontName', 'Calibri');
             homePanelEdit.editArgs('fontSize', 8);
             homePanelEdit.editArgs('foreColor', 'rgb(84, 137, 235)');
+            this.fontSize.value = 8;
+            this.fontName.value = 'Calibri';
         }, false);
     }
 
@@ -276,6 +309,8 @@ class styles {
             homePanelEdit.editArgs('fontName', 'Calibri');
             homePanelEdit.editArgs('fontSize', 6);
             homePanelEdit.editArgs('foreColor', 'rgb(84, 137, 235)');
+            this.fontSize.value = 6;
+            this.fontName.value = 'Calibri';
         }, false);
     }
 
@@ -285,6 +320,9 @@ class styles {
             homePanelEdit.editArgs('fontSize', 6);
             homePanelEdit.editArgs('foreColor', 'black');
             homePanelEdit.edit('justifyLeft');
+            this.fontSize.value = 6;
+            this.fontName.value = 'Calibri';
+
         }, false);
     }
 
@@ -293,6 +331,8 @@ class styles {
             homePanelEdit.editArgs('fontName', 'Calibri');
             homePanelEdit.editArgs('fontSize', 3);
             homePanelEdit.editArgs('foreColor', 'gray');
+            this.fontSize.value = 3;
+            this.fontName.value = 'Calibri';
 
         }, false);
     }
@@ -302,6 +342,8 @@ class styles {
             homePanelEdit.editArgs('fontSize', 3);
             homePanelEdit.edit('italic');
             homePanelEdit.editArgs('foreColor', 'gray');
+            this.fontSize.value = 3;
+            this.fontName.value = 'Calibri';
         }, false);
     }
 
@@ -310,6 +352,8 @@ class styles {
             homePanelEdit.editArgs('fontSize', 3);
             homePanelEdit.edit('italic');
             homePanelEdit.editArgs('foreColor', 'black');
+            this.fontSize.value = 3;
+            this.fontName.value = 'Calibri';
         }, false);
     }
 
@@ -318,6 +362,8 @@ class styles {
             homePanelEdit.editArgs('fontSize', 3);
             homePanelEdit.edit('italic');
             homePanelEdit.editArgs('foreColor', 'rgb(84, 137, 235)');
+            this.fontSize.value = 3;
+            this.fontName.value = 'Calibri';
         }, false);
     }
 
@@ -326,6 +372,9 @@ class styles {
             homePanelEdit.editArgs('foreColor', 'black');
             homePanelEdit.editArgs('fontSize', 3);
             homePanelEdit.edit('bold');
+            document.querySelector('svg[id="boldBtn"]').style.backgroundColor = 'rgb(231, 229, 229)';
+            this.fontSize.value = 3;
+            this.fontName.value = 'Calibri';
         }, false);
     }
 
