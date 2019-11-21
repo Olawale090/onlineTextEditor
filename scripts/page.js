@@ -4,7 +4,7 @@ let page = document.querySelector('.paper');
 //button list
 
 
-class homePanel {
+export class homePanel {
     constructor() {
         this.error = "error message is for your advantage";
         this.bold = document.getElementById('boldBtn');

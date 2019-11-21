@@ -834,7 +834,7 @@
     .document_formats {
         width: 0;
         height: 80%;
-        top: 15%;
+        top: 12.5%;
         background-color: rgb(252, 252, 252);
         position: absolute;
         z-index: 20;
@@ -864,20 +864,19 @@
         box-sizing: border-box;
     }
     
-    .file_new_templates_tab {
+    div.file_new_templates_tab {
         width: 90%;
         height: 60%;
         margin-top: 2%;
-        /* background-color: darksalmon; */
         position: absolute;
-        left: 5%;
+        left: -1%;
         padding-top: 10px;
         box-sizing: border-box;
-        display: grid;
+        display: none;
         grid-template-rows: repeat(3, 70%);
         grid-template-columns: repeat(4, 20%);
         grid-column-gap: 20px;
-        grid-row-gap: 20px;
+        grid-row-gap: 50px;
         justify-content: center;
         overflow-y: auto;
     }
@@ -888,10 +887,30 @@
         border: solid 1px gray;
     }
     
+    .blank_document::after {
+        content: 'Blank document';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -2%;
+        margin-top: 25%;
+    }
+    
     .blog_post {
         grid-row: 1/1;
         grid-column: 2/2;
         border: solid 1px gray;
+    }
+    
+    .blog_post::after {
+        content: 'Blog post';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: 0;
+        margin-top: 25%;
     }
     
     .adjacency_letter {
@@ -900,10 +919,30 @@
         border: solid 1px gray;
     }
     
+    .adjacency_letter::after {
+        content: 'Adjacent letter';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -3%;
+        margin-top: 25%;
+    }
+    
     .adjacency_report {
         grid-row: 1/1;
         grid-column: 4/4;
         border: solid 1px gray;
+    }
+    
+    .adjacency_report::after {
+        content: 'Adjacent report';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -3%;
+        margin-top: 25%;
     }
     
     .adjacency_resume {
@@ -912,10 +951,30 @@
         border: solid 1px gray;
     }
     
+    .adjacency_resume::after {
+        content: 'Adjacent resume';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -3%;
+        margin-top: 25%;
+    }
+    
     .apothecary_letter {
         grid-row: 2/2;
         grid-column: 2/2;
         border: solid 1px gray;
+    }
+    
+    .apothecary_letter::after {
+        content: 'Apothecary letter';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -3%;
+        margin-top: 25%;
     }
     
     .apothecary_newsletter {
@@ -924,10 +983,30 @@
         border: solid 1px gray;
     }
     
+    .apothecary_newsletter::after {
+        content: 'Apothecary newsletter';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -5%;
+        margin-top: 25%;
+    }
+    
     .apothecary_resume {
         grid-row: 2/2;
         grid-column: 4/4;
         border: solid 1px gray;
+    }
+    
+    .apothecary_resume::after {
+        content: 'Apothecary resume';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -3%;
+        margin-top: 25%;
     }
     
     .chronological_letter {
@@ -936,8 +1015,35 @@
         border: solid 1px gray;
     }
     
+    .chronological_letter::after {
+        content: 'Chronological letter';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -4%;
+        margin-top: 25%;
+    }
+    
     .chronological_resume {
         grid-row: 3/3;
         grid-column: 2/2;
         border: solid 1px gray;
+    }
+    
+    .chronological_resume::after {
+        content: 'Chronological resume';
+        position: absolute;
+        font-family: Calibri;
+        color: gray;
+        font-weight: bold;
+        margin-left: -4%;
+        margin-top: 25%;
+    }
+    
+    .open_window {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 15px;
+        font-weight: 10px;
+        display: none;
     }
