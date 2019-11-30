@@ -43,14 +43,7 @@ class file_tab {
     // save page as method
     // print page method
     print_documents() {
-
-            setInterval(() => {
-                var content = iframe.document.body.innerHTML;
-                document.body.innerHTML = content;
-                window.print();
-            }, 10);
-
-            document.body.innerHTML != content;
+            iframe.document.body.appendChild("<script>  </script>");
 
         }
         // export page method
